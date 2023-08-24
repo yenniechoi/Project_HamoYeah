@@ -31,7 +31,7 @@
 ### 🤝 Team Members
 - 김희수: 
 - 문승미: https://github.com/moonparks
-- 최예은: https://github.com/YeeBoss
+- 최예은: https://github.com/yenniechoi
 - 원유경: https://github.com/wyk160
 - 봉선호: https://github.com/Ohnus
 <br>
@@ -72,6 +72,6 @@
 - 김희수: kimhee0721@gmail.com
 - 문승미: mun75056@gmail.com
 - 봉선호: sh525293@gmail.com
-- 최예은: oloer12@gmail.com
+- 최예은: choiyeah123@gmail.com
 - 원유경: wyk160@gmail.com
 <br>
