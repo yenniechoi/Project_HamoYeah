@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class HMemberService {
 	private HMemberDao dao;
-	public final static String path = "C:\\Users\\Hi there\\Desktop\\webProgramming\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\HmemberImg\\";
+	//public final static String path = "C:\\Users\\Hi there\\Desktop\\webProgramming\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\HmemberImg\\";
+	public final static String path = "/Users/choeyeeun/Desktop/ME/Project/Hamo_yeah/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/img/";
 	
 	public HMemberService() {
 		dao = new HMemberDao();

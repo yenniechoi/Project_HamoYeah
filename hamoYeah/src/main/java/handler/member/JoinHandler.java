@@ -60,9 +60,9 @@ public class JoinHandler implements Handler {
 			File f = multipart.getFile("imagepath");
 			String imagepath = "";
 			if (f == null) {
-				imagepath = "\\HmemberImg\\nopic.jpg";
+				imagepath = "/img/nopic.jpg";
 			} else {
-				imagepath = "\\HmemberImg\\" + f.getName();
+				imagepath = "/img/" + f.getName();
 			}
 			HMemberService service = new HMemberService();
 			service.join(new HMemberVo(memberId, pwd, name, phone, nickname, gender, age, intro, tag1, tag2, tag3, imagepath));

@@ -14,7 +14,8 @@ public class DelBoardHandler implements Handler {
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		String path = "/Users/choeyeeun/Desktop/web_workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps";
+		String path = "/Users/choeyeeun/Desktop/ME/Project/Hamo_yeah/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps";
+		//String path = "/Users/choeyeeun/Desktop/web_workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps";
 		
 		int boardNum = Integer.parseInt(request.getParameter("boardNum"));
 		String memberId = request.getParameter("memberId");

@@ -60,7 +60,8 @@ public class EditBoardHandler implements Handler {
 				// 이미지 수정 안했을 경우(받아올 값이 없을 경우): 이름이 있으면 즉, 이미지를 수정했으면 새로운 경로 생성 / 아니라면 기존 글의 경로를 넣어줌
 				String fname = null;
 				if (f != null) {
-					String path = "/Users/choeyeeun/Desktop/web_workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps";
+					String path = "/Users/choeyeeun/Desktop/ME/Project/Hamo_yeah/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps";
+					//String path = "/Users/choeyeeun/Desktop/web_workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps";
 					String delimg = path + vo.getImagepath();
 					File f2 = new File(delimg);
 					f2.delete();

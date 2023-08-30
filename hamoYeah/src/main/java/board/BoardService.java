@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class BoardService {
 	private BoardDao dao;
 	//public final static String path = "C:\\Users\\원유경\\Desktop\\Eclipse\\Web Workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img\\";
-	public final static String path = "C:\\Users\\Hi there\\Desktop\\webProgramming\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\HmemberImg\\";
+//	public final static String path = "C:\\Users\\Hi there\\Desktop\\webProgramming\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\HmemberImg\\";
+	public final static String path = "/Users/choeyeeun/Desktop/ME/Project/Hamo_yeah/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/img/";
 	
 	public BoardService() {
 		dao = new BoardDao();

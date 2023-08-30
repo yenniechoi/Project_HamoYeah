@@ -76,12 +76,13 @@ public class EditHandler implements Handler {
 			} else {
 				// 회원 정보 수정할 때 이미지도 수정하면 기존에 있던 이미지 파일 삭제
 				// db에는 수정된 imagepath만 등록되므로 db삭제는 안해도 될 듯?
-				String path = "C:\\Users\\Hi there\\Desktop\\webProgramming\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\";
+				String path = "/Users/choeyeeun/Desktop/ME/Project/Hamo_yeah/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/";
+				//String path = "C:\\Users\\Hi there\\Desktop\\webProgramming\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\";
 				String delimg = path + vo.getImagepath();
 				File f2 = new File(delimg);
 				f2.delete();
 
-				imagepath = "\\HmemberImg\\" + f.getName();
+				imagepath = "/img/" + f.getName();
 			}
 			service = new HMemberService();
 			service.editInfo(new HMemberVo(memberId, resetpwd, "", phone, nickname, "", age, intro, tag1, tag2, tag3, imagepath));
