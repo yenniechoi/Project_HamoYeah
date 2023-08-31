@@ -192,25 +192,25 @@ function userinfo(memberId){
 		<div class="">
 			<c:if
 				test="${not empty sessionScope.loginId && sessionScope.loginId ne boardvo.memberId }">
-				<div class="parent">
+				<div class="parent" style="float: left; margin-left: 25%">		
 					<div class="HB_img">
 						<c:if test="${boardvo.fav eq 0}">
 							<img src="../img/F2.jpeg" id="img"
-								style="width: 20px; height: 20px;"
+								style="width: 27px; height: 27px;"
 								onclick="fav('${boardvo.boardNum}', '${sessionScope.loginId }')">
 						</c:if>
 
 						<c:if test="${boardvo.fav eq 1}">
 							<img src="../img/F1.png" id="img"
-								style="width: 20px; height: 20px;"
+								style="width: 27px; height: 27px;"
 								onclick="fav('${boardvo.boardNum}', '${sessionScope.loginId }')">
 						</c:if>
 					</div>
 				</div>
 
-				<div class="detail">
-					<input class="WH_btn" type="button" id="reportbtn" value="신고">
-					<input class="M_btn" type="button" value="목록"
+				<div class="HB_btn">
+					<input type="button" id="reportbtn" value="신고">
+					<input type="button" value="목록"
 						onclick="location.href='${pageContext.request.contextPath}/board/boardAllList.do';">
 				</div>
 
@@ -330,6 +330,9 @@ function userinfo(memberId){
 			</div>
 		</div>
 		<br/><br/>
+		
+		<c:if test="${not empty sessionScope.loginId && boardvo.y_card < 3}">
+		
 		<div class="content-participate" style="text-align:center; margin-right:11.5%">
 			<!-- 승인된 참여자 리스트 -->
 			<div class="p_list" style="font-size: 15px;">참여자</div>
@@ -370,7 +373,7 @@ function userinfo(memberId){
 			</div>
 		</div>
 
-		<c:if test="${not empty sessionScope.loginId && boardvo.y_card < 3}">
+		
 
 
 <br/><br/><br/>

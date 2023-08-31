@@ -20,27 +20,28 @@ public class ListAllHandler implements Handler {
 		// TODO Auto-generated method stub
 		BoardService service = new BoardService();
 		ArrayList<BoardVo> list = service.getAllBoard();
-		FavoritesVo fvo = new FavoritesVo();
-		
 		FavoritesService servFav = new FavoritesService();
+
 		// 삼항 연산자 : 타입 변수명 = ( 조건문 ) ? 참일 때 : 거짓일 때;
 		String memberId = (request.getParameter("memberId") == null) ? "" : request.getParameter("memberId");
 		if (memberId.equals("null")) { // 로그인 되어 있지 않으면 즐겨찾기 회색.
-			for(BoardVo bvo:list) {
+			for (BoardVo bvo : list) {
 				bvo.setFav(0);
 			}
 		} else { // 로그인 되어 있으면 즐겨찾기 비교.
-			for(BoardVo bvo:list) {
-				fvo = servFav.getFavVo(bvo.getBoardNum(), memberId);
-				if (fvo == null) {
-					bvo.setFav(0);
-				} else {
-					bvo.setFav(1);
+			ArrayList<FavoritesVo> fvoList = servFav.getFavList(memberId);
+			for (BoardVo bvo : list) {
+				for (FavoritesVo fvo : fvoList) {
+					if (bvo.getBoardNum() == fvo.getBoardNum()) {
+						bvo.setFav(1);
+					} else {
+						bvo.setFav(0);
+					}
 				}
 			}
 		}
-		
-		// ok 갱신 
+
+		// ok 갱신
 		ParticipateService servPar = new ParticipateService();
 		BoardService servBoard = new BoardService();
 		int cnt = 0;
@@ -54,16 +55,12 @@ public class ListAllHandler implements Handler {
 			servBoard.EditParticipate(bvo);
 			cnt = 0;
 		}
-		
-		
+
 		request.setAttribute("list", list);
 		request.setAttribute("view", "/board/boardAllList.jsp");
-		
+
 		return "/main.jsp";
 
 	}
 
 }
-
-
-
