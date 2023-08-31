@@ -309,7 +309,10 @@ function userinfo(memberId){
 				<div class="wth">날짜 | ${boardvo.dDay }</div>
 				<div class="ok">${boardvo.ok } 명 / ${boardvo.peopleMax} 명</div>
 				<br/><br/><br/><br/>
-				<div class="con" style="font-weight:bold;">${boardvo.content }</div>
+				<div class="con" style="font-weight:bold;">
+					<!-- white-space: pre-line : textarea로 입력받은 텍스트를 줄바꿈 적용해줌. -->
+					<p style="white-space: pre-line">${boardvo.content }</p>
+				</div>
 				<br/><br/><br/>
 			</div>
 		</div>
@@ -327,7 +330,7 @@ function userinfo(memberId){
 			</div>
 		</div>
 		<br/><br/>
-		<div class="content-participate">
+		<div class="content-participate" style="text-align:center; margin-right:11.5%">
 			<!-- 승인된 참여자 리스트 -->
 			<div class="p_list" style="font-size: 15px;">참여자</div>
 			<div id="P_ok" style="text-align:center">
@@ -377,9 +380,10 @@ function userinfo(memberId){
 				<div class="com">댓글</div><br/>
 				<c:forEach var="rep" items="${boardvo.reps}">
 					<div id="${rep.repNum}">
-						<span class="author">${rep.memberId}</span> <span class="content">
-							${rep.content} <c:if
-								test="${sessionScope.loginId eq rep.memberId}">
+						<span class="author">${rep.memberId}</span> 
+						<span class="content">
+							${rep.content} 
+							<c:if test="${sessionScope.loginId eq rep.memberId}">
 								<input type="button" value="삭제" onclick="del('${rep.repNum}')">
 							</c:if>
 						</span>
@@ -389,14 +393,12 @@ function userinfo(memberId){
 
 <!-- 			<div class="content-comments"> -->
 				<div class="comsub" style="margin-top:20px;">
-					<form action="${pageContext.request.contextPath}/board/comment.do"
-						name="repf" method="post">
-						<input type="hidden" name="boardNum" value="${boardvo.boardNum}"
-							readonly> <input type="hidden" name="memberId"
-							value="${sessionScope.loginId}" readonly> <input
-							type="hidden" name="reRepNum" value="0" readonly> <input
-							type="text" name="content" id="content" style="border:solid #dcd9d9 1px;"> <input
-							type="submit" value="작성">
+					<form action="${pageContext.request.contextPath}/board/comment.do" name="repf" method="post">
+						<input type="hidden" name="boardNum" value="${boardvo.boardNum}" readonly> 
+						<input type="hidden" name="memberId" value="${sessionScope.loginId}" readonly> 
+						<!-- <input type="hidden" name="reRepNum" value="0" readonly> -->
+						<input type="text" name="content" id="content" style="border:solid #dcd9d9 1px;"> 
+						<input type="submit" value="작성">
 					</form>
 				</div>
 			</div>

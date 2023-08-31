@@ -34,9 +34,10 @@ public class CommentHandler implements Handler {
 		String memberId = request.getParameter("memberId");
 		int boardNum = Integer.parseInt(request.getParameter("boardNum"));
 		String comment = request.getParameter("content");
-		//int repNum = Integer.parseInt(request.getParameter("repNum")); // 삭제
-		int reRepNum = Integer.parseInt(request.getParameter("reRepNum"));
-		CommentVo vo = new CommentVo(memberId, boardNum, 0, reRepNum, comment); // repNum 0으로 추가
+		//int repNum = Integer.parseInt(request.getParameter("repNum")); 
+		//int reRepNum = Integer.parseInt(request.getParameter("reRepNum"));
+		int reRepNum = 0;
+		CommentVo vo = new CommentVo(memberId, boardNum, 0, reRepNum, comment); // reRepNum 0으로 추가
 		
 		System.out.println("comment handler:" + vo);
 

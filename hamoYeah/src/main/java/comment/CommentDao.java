@@ -18,7 +18,8 @@ public class CommentDao {
 	//댓글 추가
 	public void insert(CommentVo vo) {
 		Connection conn = dbconn.conn();
-		String sql = "insert into h_comment values(?, ?, seq_h_comment.nextval, ?, ?)";
+		// seq_H_board.nextval
+		String sql = "insert into h_comment values(?, ?, seq_H_comment.nextval, ?, ?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);		
 			pstmt.setString(1, vo.getMemberId());
@@ -28,6 +29,7 @@ public class CommentDao {
 			
 			int num = pstmt.executeUpdate();
 			System.out.println(num+"줄 추가됨");
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
